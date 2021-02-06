@@ -219,6 +219,20 @@ def remove_spending (user_id, index):
 
 ##################################################################
 
+def list_accounts():
+    accounts = db.session.query(Account).all()
+
+    return accounts
+
+##################################################################
+
+def check_admin(user_id):
+    admins = [445956852, 1, 2, 3]
+    
+    return user_id in admins
+
+##################################################################
+
 def get_fallback_message (text):
     response = f"\U0001F648 No entendí lo que me acabas de decir"
     return response
